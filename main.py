@@ -17,6 +17,10 @@ from src.analysis import (
     run_full_analysis
 )
 
+from src.visualizations import (
+    generate_all_visualizations
+)
+
 
 def main():
 
@@ -60,8 +64,14 @@ def main():
 
     print(df[engineered_columns].head())
 
-    # Run analysis
+    # Analysis
     analysis_results = run_full_analysis(df)
+
+    # Visualizations
+    generate_all_visualizations(df)
+
+    print("\nVisualizations Generated Successfully")
+    print("-" * 60)
 
     print("\nDataset Overview")
     print("-" * 60)
@@ -73,7 +83,6 @@ def main():
 
     print("\nTop 10 Success Predictors")
     print("-" * 60)
-
     print(
         analysis_results["strongest_predictors"]
         .head(10)
@@ -81,28 +90,24 @@ def main():
 
     print("\nPerformance Segmentation")
     print("-" * 60)
-
     print(
         analysis_results["performance_segmentation"]
     )
 
     print("\nRisk Analysis")
     print("-" * 60)
-
     print(
         analysis_results["risk_analysis"]
     )
 
     print("\nHigh Performer Profile")
     print("-" * 60)
-
     print(
         analysis_results["high_performer_analysis"]
     )
 
     print("\nLow Performer Profile")
     print("-" * 60)
-
     print(
         analysis_results["low_performer_analysis"]
     )
