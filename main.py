@@ -20,6 +20,9 @@ from src.analysis import (
 from src.visualizations import (
     generate_all_visualizations
 )
+from src.insights import (
+    generate_all_insights
+)
 
 
 def main():
@@ -72,6 +75,12 @@ def main():
 
     print("\nVisualizations Generated Successfully")
     print("-" * 60)
+    
+    # Generate insights
+    insights = generate_all_insights(
+        df,
+        analysis_results
+    )
 
     print("\nDataset Overview")
     print("-" * 60)
@@ -114,6 +123,16 @@ def main():
 
     print("\nAnalysis Completed Successfully")
     print("=" * 60)
+    
+    print("\nKey Insights")
+    print("-" * 60)
+
+    for category, values in insights.items():
+
+        print(f"\n{category.upper()}")
+
+        for item in values:
+            print(f"• {item}")
 
 
 if __name__ == "__main__":
