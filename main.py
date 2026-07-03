@@ -13,30 +13,103 @@ from src.feature_engineering import (
     engineer_features
 )
 
-
-df = load_dataset("data/students.csv")
-
-preview_dataset(df)
-
-dataset_info(df)
-
-df = clean_data(df)
-
-quality_report = generate_data_quality_report(df)
-
-df = engineer_features(df)
-
-print("\nEngineered Features")
-print("-" * 50)
-
-print(
-    df[
-        [
-            "g3",
-            "performance_category",
-            "academic_risk_score",
-            "risk_level",
-            "student_persona"
-        ]
-    ].head()
+from src.analysis import (
+    run_full_analysis
 )
+
+
+def main():
+
+    print("\n" + "=" * 60)
+    print("STUDENT SUCCESS INTELLIGENCE SYSTEM")
+    print("=" * 60)
+
+    # Load dataset
+    df = load_dataset("data/students.csv")
+
+    # Preview dataset
+    preview_dataset(df)
+
+    # Dataset information
+    dataset_info(df)
+
+    # Clean data
+    df = clean_data(df)
+
+    # Data quality report
+    quality_report = generate_data_quality_report(df)
+
+    print("\nData Quality Report")
+    print("-" * 60)
+    print(quality_report.head())
+
+    # Feature engineering
+    df = engineer_features(df)
+
+    print("\nEngineered Features Preview")
+    print("-" * 60)
+
+    engineered_columns = [
+        "g3",
+        "performance_category",
+        "attendance_risk_score",
+        "academic_risk_score",
+        "risk_level",
+        "student_persona"
+    ]
+
+    print(df[engineered_columns].head())
+
+    # Run analysis
+    analysis_results = run_full_analysis(df)
+
+    print("\nDataset Overview")
+    print("-" * 60)
+    print(analysis_results["dataset_overview"])
+
+    print("\nStatistical Summary")
+    print("-" * 60)
+    print(analysis_results["statistical_summary"])
+
+    print("\nTop 10 Success Predictors")
+    print("-" * 60)
+
+    print(
+        analysis_results["strongest_predictors"]
+        .head(10)
+    )
+
+    print("\nPerformance Segmentation")
+    print("-" * 60)
+
+    print(
+        analysis_results["performance_segmentation"]
+    )
+
+    print("\nRisk Analysis")
+    print("-" * 60)
+
+    print(
+        analysis_results["risk_analysis"]
+    )
+
+    print("\nHigh Performer Profile")
+    print("-" * 60)
+
+    print(
+        analysis_results["high_performer_analysis"]
+    )
+
+    print("\nLow Performer Profile")
+    print("-" * 60)
+
+    print(
+        analysis_results["low_performer_analysis"]
+    )
+
+    print("\nAnalysis Completed Successfully")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+    main()
