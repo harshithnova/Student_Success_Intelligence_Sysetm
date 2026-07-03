@@ -1,0 +1,171 @@
+STUDENT SUCCESS INTELLIGENCE SYSTEM
+Generated: 2026-07-03 16:06:05.792886
+======================================================================
+
+======================================================================
+EXECUTIVE SUMMARY
+======================================================================
+
+
+Total Students Analyzed:
+649
+
+Average Final Grade:
+11.91
+
+Highest Grade:
+19
+
+Lowest Grade:
+0
+
+
+======================================================================
+DATASET OVERVIEW
+======================================================================
+
+
+Rows:
+649
+
+Columns:
+42
+
+Engineered Features Added:
+Performance Category,
+Attendance Risk Score,
+Academic Risk Score,
+Risk Level,
+Study Efficiency Score,
+Academic Stability Index,
+Student Persona
+
+
+======================================================================
+STATISTICAL SUMMARY
+======================================================================
+
+mean: 11.91
+median: 12.0
+std: 3.23
+variance: 10.44
+25_percentile: 10.0
+75_percentile: 14.0
+
+======================================================================
+TOP SUCCESS FACTORS
+======================================================================
+
+g3 : 1.000
+g2 : 0.919
+g1 : 0.826
+final_improvement_score : 0.434
+study_efficiency_score : 0.371
+performance_growth : 0.276
+studytime : 0.250
+medu : 0.240
+fedu : 0.212
+famrel : 0.063
+
+
+======================================================================
+RISK ANALYSIS
+======================================================================
+
+Low Risk : 356 students
+Medium Risk : 242 students
+High Risk : 51 students
+
+
+======================================================================
+HIGH PERFORMER PROFILE
+======================================================================
+
+student_count: 82
+average_absences: 2.59
+average_studytime: 2.24
+average_failures: 0.01
+
+======================================================================
+LOW PERFORMER PROFILE
+======================================================================
+
+student_count: 100
+average_absences: 4.61
+average_studytime: 1.61
+average_failures: 0.75
+
+======================================================================
+KEY FINDINGS
+======================================================================
+
+
+GRADE_INSIGHTS
+- The average final grade across all students is 11.91.
+- 82 students achieved excellent academic performance.
+
+FAILURE_INSIGHTS
+- Students with prior academic failures consistently score lower than students with no failure history.
+- Average grade without failures: 12.51
+- Average grade with failures: 8.59
+
+ATTENDANCE_INSIGHTS
+- Attendance has a correlation of -0.09 with final grades.
+- Higher absenteeism is associated with lower academic performance.
+
+RISK_INSIGHTS
+- 51 students are classified as High Risk.
+- 242 students are classified as Medium Risk.
+- These students should be prioritized for academic intervention.
+
+STUDY_INSIGHTS
+- Students in study time category 3 achieved the highest average grade of 13.23.
+
+PERSONA_INSIGHTS
+- The largest student segment is 'Typical Student'.
+
+PREDICTOR_INSIGHTS
+- g3 shows a correlation of 1.000 with final grade.
+- g2 shows a correlation of 0.919 with final grade.
+- g1 shows a correlation of 0.826 with final grade.
+- final_improvement_score shows a correlation of 0.434 with final grade.
+- study_efficiency_score shows a correlation of 0.371 with final grade.
+- performance_growth shows a correlation of 0.276 with final grade.
+
+RECOMMENDATIONS
+- Implement early-warning monitoring for students with repeated absences.
+- Provide academic support for students with previous failures.
+- Track high-risk students weekly.
+- Encourage consistent study habits.
+- Review attendance patterns before major examinations.
+
+
+======================================================================
+RECOMMENDATIONS
+======================================================================
+
+- Implement early-warning monitoring for students with repeated absences.
+- Provide academic support for students with previous failures.
+- Track high-risk students weekly.
+- Encourage consistent study habits.
+- Review attendance patterns before major examinations.
+
+
+======================================================================
+CONCLUSION
+======================================================================
+
+
+Student performance is influenced by
+multiple academic and behavioral factors.
+
+Attendance, prior failures and previous
+assessment performance emerged as the
+strongest indicators of final academic
+outcomes.
+
+The risk identification system can be
+used to proactively identify students
+who may benefit from additional support
+and intervention.
+

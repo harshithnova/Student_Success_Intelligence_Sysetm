@@ -23,7 +23,9 @@ from src.visualizations import (
 from src.insights import (
     generate_all_insights
 )
-
+from src.report_generator import (
+    generate_report
+)
 
 def main():
 
@@ -75,12 +77,23 @@ def main():
 
     print("\nVisualizations Generated Successfully")
     print("-" * 60)
-    
+
     # Generate insights
     insights = generate_all_insights(
         df,
         analysis_results
     )
+
+    # Generate report
+    report_path = generate_report(
+        df,
+        analysis_results,
+        insights
+    )
+
+    print("\nReport Generated Successfully")
+    print("-" * 60)
+    print(report_path)
 
     print("\nDataset Overview")
     print("-" * 60)
