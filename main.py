@@ -26,6 +26,9 @@ from src.insights import (
 from src.report_generator import (
     generate_report
 )
+from src.export_utils import (
+    create_export_folder
+)
 
 def main():
 
@@ -71,6 +74,21 @@ def main():
 
     # Analysis
     analysis_results = run_full_analysis(df)
+    
+    create_export_folder()
+
+    risk_students = df[
+        df["risk_level"] == "High Risk"
+    ]
+
+    risk_students.to_csv(
+        "outputs/data_exports/risk_students.csv",
+        index=False
+    )
+
+    print("\nRisk Student Export Created")
+    print("-" * 60)
+    print("outputs/data_exports/risk_students.csv")
 
     # Visualizations
     generate_all_visualizations(df)
@@ -136,6 +154,18 @@ def main():
 
     print("\nAnalysis Completed Successfully")
     print("=" * 60)
+
+    print("\nAnalysis Completed Successfully")
+    print("=" * 60)
+
+    print("\nGenerated Deliverables")
+    print("-" * 60)
+
+    print("✓ 20 Analytics Charts")
+    print("✓ Risk Student Dataset")
+    print("✓ Executive Report")
+    print("✓ Statistical Analysis")
+    print("✓ Executive Insights")
     
     print("\nKey Insights")
     print("-" * 60)
