@@ -9,6 +9,10 @@ from src.cleaning import (
     generate_data_quality_report
 )
 
+from src.feature_engineering import (
+    engineer_features
+)
+
 
 df = load_dataset("data/students.csv")
 
@@ -20,6 +24,19 @@ df = clean_data(df)
 
 quality_report = generate_data_quality_report(df)
 
-print("\nData Quality Report")
+df = engineer_features(df)
+
+print("\nEngineered Features")
 print("-" * 50)
-print(quality_report.head())
+
+print(
+    df[
+        [
+            "g3",
+            "performance_category",
+            "academic_risk_score",
+            "risk_level",
+            "student_persona"
+        ]
+    ].head()
+)
